@@ -931,8 +931,10 @@
 
 .member-photo {
   position: relative;
-  height: 300px;
+  height: 600px;
   overflow: hidden;
+  margin-bottom:20px;
+  object-fit: cover;
 }
 
 .member-photo img {
@@ -1107,6 +1109,47 @@
   background: #f5f5f5;
   transform: translateX(-5px);
 }
+
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background-color: white;
+  padding: 25px;
+  margin: 10% auto;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 22px;
+  cursor: pointer;
+}
+.contact-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.contact-buttons .btn {
+  text-decoration: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin: 5px;
+}
+.whatsapp { background-color: #25D366; }
+.call { background-color: #007BFF; }
+.email { background-color: #FF5722; }
+
   </style>
 </head>
 <body>
@@ -1148,7 +1191,7 @@
     
     <h2>À propos de nous</h2>
     <p>
-      Fondée au Sénégal, Dk Universel Shop est une entreprise dynamique opérant dans divers secteurs clés. Notre approche innovante et notre engagement envers l'excellence nous permettent de fournir des produits et services de haute qualité adaptés aux besoins locaux et internationaux.
+      Fondée au Sénégal, TERANGA NUMÉRIQUE est une entreprise innovante spécialisée dans les solutions numériques. Notre approche avant-gardiste et notre engagement envers l'excellence nous permettent de proposer des services de haute qualité en développement logiciel, intelligence artificielle, cybersécurité, cloud computing et transformation digitale, répondant aux besoins tant locaux qu'internationaux.
     </p>
     
     <div class="stats">
@@ -1242,10 +1285,42 @@
 
           </div>
           <h3>Référencement web</h3>
-          <p>Le référencement web, ou SEO (Search Engine Optimization), est essentiel pour améliorer la visibilité de votre site internet sur les moteurs de recherche comme Google. Nous mettons en œuvre des stratégies techniques et de contenu pour optimiser chaque page, accroître votre trafic organique et attirer des visiteurs qualifiés. Grâce à un bon référencement, votre site peut se démarquer durablement dans les résultats de recherche.</p>
-          <button>En savoir plus <i class="fas fa-arrow-right"></i></button>
+          <p>
+            Boostez la visibilité de votre site sur Google grâce à nos stratégies SEO efficaces et sur mesure.
+          </p>
+          <button class="open-modal-btn" data-target="serviceModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
+
         </div>
       </div>
+      
+
+      <!-- ✅ POPUP (à placer à la fin du <body> ou juste après la section "services") -->
+<div id="serviceModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Référencement Web (SEO)</h2>
+    <p>
+      Le <strong>référencement naturel</strong> est un levier incontournable pour améliorer la visibilité de votre entreprise sur les moteurs de recherche.
+      Notre service comprend :
+    </p>
+    <ul>
+      <li>✅ Audit SEO technique et sémantique de votre site</li>
+      <li>🔍 Optimisation du contenu et des balises (meta, Hn, alt...)</li>
+      <li>🔗 Stratégie de netlinking pour renforcer l’autorité de votre domaine</li>
+      <li>📈 Suivi des performances (Google Analytics, Search Console)</li>
+    </ul>
+    <p>
+      Grâce à notre expertise, vous gagnez en trafic organique qualifié, en notoriété et en conversions. Contactez-nous pour une stratégie sur-mesure.
+    </p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
+      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
+</div>
+
+
 
       <div class="service-card">
         <img src="IMAGES/clouds.jpg" alt="Import Export">
@@ -1255,10 +1330,38 @@
 
           </div>
           <h3>Services Clouds</h3>
-          <p>Nos services cloud vous permettent de moderniser votre infrastructure informatique en accédant à des solutions sécurisées, évolutives et accessibles depuis n’importe où. Que ce soit pour l’hébergement de vos sites web, le stockage de données, la sauvegarde en ligne ou l’intégration d’applications cloud, nous vous accompagnons dans la transformation numérique de votre entreprise. Profitez de la flexibilité et de la performance du cloud tout en réduisant vos coûts.</p>
-          <button>En savoir plus <i class="fas fa-arrow-right"></i></button>
+<p>
+  Modernisez votre système d'information avec nos solutions cloud sécurisées, flexibles et économiques.
+</p>
+<button class="open-modal-btn" data-target="cloudModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
         </div>
       </div>
+    <!-- Popup Services Clouds -->
+<div id="cloudModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Services Cloud</h2>
+    <p>
+      Nos services cloud vous offrent des infrastructures performantes et flexibles pour soutenir votre activité. Nous proposons :
+    </p>
+    <ul>
+      <li>☁️ Hébergement web haute disponibilité</li>
+      <li>🔐 Stockage sécurisé des données (S3, Azure Blob, etc.)</li>
+      <li>🛡️ Sauvegardes automatiques et restaurations rapides</li>
+      <li>🔄 Intégration d'applications cloud (SaaS, PaaS, IaaS)</li>
+      <li>💡 Accompagnement et migration vers AWS, Azure, ou Google Cloud</li>
+    </ul>
+    <p>
+      Adoptez le cloud pour améliorer votre agilité, réduire les coûts et garantir une haute disponibilité de vos services.
+    </p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
+      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
+</div>
+
 
       <div class="service-card">
         <img src="IMAGES/site.png" alt="Électronique">
@@ -1268,10 +1371,39 @@
 
           </div>
           <h3>Création de sites web</h3>
-          <p>Nous proposons des services professionnels de création de sites web adaptés à vos besoins. Que vous soyez une entreprise, un entrepreneur ou une organisation, nous vous accompagnons dans la conception d’un site moderne, responsive et optimisé pour le référencement. Nos solutions incluent l’intégration de design attractif, de fonctionnalités avancées et une expérience utilisateur fluide.</p>
-          <button>En savoir plus <i class="fas fa-arrow-right"></i></button>
+          <p>
+            Des sites web modernes, responsives et optimisés pour booster votre présence en ligne.
+          </p>
+          <button class="open-modal-btn" data-target="webModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
         </div>
       </div>
+
+      <!-- Popup Création de sites web -->
+<div id="webModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Création de sites web</h2>
+    <p>
+      Nous concevons des sites web sur mesure pour valoriser votre activité et renforcer votre image en ligne.
+    </p>
+    <ul>
+      <li>🎯 Conception de sites vitrines, e-commerce, blogs ou portails</li>
+      <li>📱 Design responsive pour une expérience optimale sur mobile et tablette</li>
+      <li>⚙️ Fonctionnalités avancées : formulaires, chat, réservations, etc.</li>
+      <li>🚀 Optimisation SEO pour améliorer votre visibilité</li>
+      <li>🧰 Maintenance et évolutivité garanties</li>
+    </ul>
+    <p>
+      Nous vous accompagnons à chaque étape : de l’idée à la mise en ligne, pour que votre site devienne un véritable levier de croissance.
+    </p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
+      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
+</div>
+
 
       <div class="service-card">
         <img src="IMAGES/formation.jpg" alt="Agriculture">
@@ -1280,11 +1412,41 @@
             <i class="fas fa-chalkboard-teacher"></i>
 
           </div>
-          <h3>Formation et Coatching</h3>
-          <p>Nous proposons des services de formation et de coaching personnalisés dans le domaine du numérique. Que vous soyez débutant ou professionnel souhaitant se perfectionner, nos programmes couvrent des thématiques comme la création de site web, le marketing digital, le cloud, ou encore le design graphique. Notre approche pédagogique est basée sur la pratique, l’écoute et l’accompagnement pour garantir une montée en compétences efficace et durable.</p>
-          <button>En savoir plus <i class="fas fa-arrow-right"></i></button>
+          <h3>Formation et Coaching</h3>
+          <p>
+             Formations pratiques et coaching personnalisés pour réussir dans le numérique.
+          </p>
+          <button class="open-modal-btn" data-target="formationModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
+
         </div>
       </div>
+
+      <!-- Popup Formation et Coaching -->
+<div id="formationModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Formation & Coaching Numérique</h2>
+    <p>
+      Nous proposons des sessions de formation et de coaching adaptées à tous les niveaux dans les domaines clés du numérique :
+    </p>
+    <ul>
+      <li>💻 Création de sites web (HTML, CSS, WordPress, etc.)</li>
+      <li>📈 Marketing digital (réseaux sociaux, SEO, emailing)</li>
+      <li>☁️ Initiation et certification Cloud (AWS, Azure)</li>
+      <li>🎨 Design graphique (Canva, Photoshop, UX/UI)</li>
+      <li>🧑‍🏫 Coaching individualisé pour projets professionnels</li>
+    </ul>
+    <p>
+      Notre approche repose sur la pratique, l’écoute et un accompagnement humain pour garantir une réelle montée en compétences.
+    </p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
+      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
+</div>
+
 
       <div class="service-card">
         <img src="IMAGES/logo.png" alt="Commerce Détail">
@@ -1294,10 +1456,39 @@
 
           </div>
           <h3>Conception de Logo</h3>
-          <p>La conception de logo est essentielle pour construire l’identité visuelle d’une marque. Nous créons des logos uniques, professionnels et mémorables qui reflètent les valeurs et la vision de votre entreprise. Notre processus créatif associe design graphique, stratégie de marque et retours clients afin de garantir un résultat à la fois esthétique et significatif. Un bon logo vous distingue et renforce votre crédibilité sur le marché.</p>
-          <button>En savoir plus <i class="fas fa-arrow-right"></i></button>
+<p>
+  Des logos uniques et percutants pour affirmer l'identité de votre marque.
+</p>
+<button class="open-modal-btn" data-target="logoModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
+
         </div>
       </div>
+
+      <!-- Popup Conception de Logo -->
+<div id="logoModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Conception de Logo Professionnel</h2>
+    <p>
+      Nous créons des logos sur mesure, conçus pour transmettre l’essence et les valeurs de votre marque. Notre démarche inclut :
+    </p>
+    <ul>
+      <li>🎯 Analyse de votre identité et de votre positionnement</li>
+      <li>🎨 Création de plusieurs propositions graphiques</li>
+      <li>📝 Intégration de vos retours pour affiner le design</li>
+      <li>📦 Livraison de fichiers HD pour tous vos supports</li>
+    </ul>
+    <p>
+      Un bon logo ne se contente pas d’être joli : il inspire confiance, attire l’attention et marque les esprits.
+    </p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
+      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
+</div>
+
     
 
     <div class="service-card">
@@ -1308,10 +1499,39 @@
 
         </div>
         <h3>Marketing Digital</h3>
-        <p>Le marketing digital regroupe l’ensemble des techniques utilisées pour promouvoir vos produits ou services sur internet. Grâce à des canaux comme les réseaux sociaux, le marketing par e-mail, le référencement payant (SEA) ou encore le content marketing, nous vous aidons à développer votre notoriété, attirer de nouveaux clients et fidéliser votre audience. Nos stratégies sont personnalisées pour répondre aux objectifs spécifiques de votre entreprise.</p>
-        <button>En savoir plus <i class="fas fa-arrow-right"></i></button>
+<p>
+  Boostez votre visibilité en ligne avec des stratégies marketing ciblées et performantes.
+</p>
+<button class="open-modal-btn" data-target="marketingModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
+
       </div>
     </div>
+
+    <!-- Popup Marketing Digital -->
+<div id="marketingModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Marketing Digital</h2>
+    <p>
+      Nos services de marketing digital vous permettent d’atteindre efficacement vos clients là où ils passent le plus de temps : en ligne. Nos solutions incluent :
+    </p>
+    <ul>
+      <li>📢 Campagnes ciblées sur les réseaux sociaux (Facebook, Instagram, LinkedIn...)</li>
+      <li>📈 Référencement payant (SEA) sur Google Ads</li>
+      <li>📬 Email marketing pour fidéliser vos clients</li>
+      <li>✍️ Création de contenu à forte valeur ajoutée (blog, vidéo, visuels)</li>
+    </ul>
+    <p>
+      Ensemble, nous mettons en place une stratégie sur-mesure pour augmenter votre notoriété, générer du trafic qualifié et maximiser vos conversions.
+    </p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
+      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
+</div>
+
   </section>
 
   <section id="contact" class="contact">
@@ -1627,6 +1847,30 @@
     };
 
     updateCount();
+  });
+
+  // Ouvrir la bonne modale
+  document.querySelectorAll('.open-modal-btn').forEach(button => {
+    button.addEventListener('click', function () {
+      const modalId = this.getAttribute('data-target');
+      document.getElementById(modalId).style.display = 'block';
+    });
+  });
+
+  // Fermer toutes les modales
+  document.querySelectorAll('.modal .close-btn').forEach(closeBtn => {
+    closeBtn.addEventListener('click', function () {
+      this.closest('.modal').style.display = 'none';
+    });
+  });
+
+  // Fermer si clic à l’extérieur de la modale
+  window.addEventListener('click', function (e) {
+    document.querySelectorAll('.modal').forEach(modal => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
   });
   </script>
 

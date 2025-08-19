@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const navUl = document.querySelector('nav ul');
     
     if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
             navUl.classList.toggle('active');
         });
     }
@@ -26,6 +27,23 @@ document.addEventListener('DOMContentLoaded', function() {
             navUl.classList.remove('active');
         });
     });
+    
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (navUl && navUl.classList.contains('active')) {
+            // Check if click is outside the menu and toggle button
+            if (!navUl.contains(e.target) && !menuToggle.contains(e.target)) {
+                navUl.classList.remove('active');
+            }
+        }
+    });
+    
+    // Prevent menu from closing when clicking inside it
+    if (navUl) {
+        navUl.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
 });
 
 // Smooth scrolling for anchor links

@@ -1,1877 +1,306 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dk Universel Shop - Excellence Multisectorielle</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BYC0JV7HT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-2BYC0JV7HT');
+  </script>
+
+  <!-- SEO Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TERANGA NUMÉRIQUE - Solutions Digitales Innovantes au Sénégal | Développement Web, IA, Cybersécurité</title>
+  <meta name="description" content="TERANGA NUMÉRIQUE, leader des solutions numériques au Sénégal. Développement web, intelligence artificielle, cybersécurité, cloud computing et transformation digitale. Devis gratuit.">
+  <meta name="keywords" content="développement web Sénégal, intelligence artificielle Dakar, cybersécurité Sénégal, solutions digitales, transformation numérique, développement logiciel, cloud computing, TERANGA NUMÉRIQUE">
+  <meta name="author" content="TERANGA NUMÉRIQUE">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://teranganumerique.com/">
+  <meta property="og:title" content="TERANGA NUMÉRIQUE - Solutions Digitales Innovantes au Sénégal">
+  <meta property="og:description" content="Leader des solutions numériques au Sénégal. Développement web, IA, cybersécurité et transformation digitale.">
+  <meta property="og:image" content="logo.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://teranganumerique.com/">
+  <meta property="twitter:title" content="TERANGA NUMÉRIQUE - Solutions Digitales Innovantes">
+  <meta property="twitter:description" content="Leader des solutions numériques au Sénégal. Développement web, IA, cybersécurité.">
+  <meta property="twitter:image" content="logo.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://teranganumerique.com/">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="logo.jpg">
+  
+  <!-- Fonts and Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-light: #3b82f6;
-      --primary-dark: #1d4ed8;
-      --secondary: #10b981;
-      --accent: #f59e0b;
-      --dark: #1e293b;
-      --light: #f8fafc;
-      --gray: #94a3b8;
-      --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-      --gradient-accent: linear-gradient(135deg, var(--primary), var(--accent));
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    
-    /* Navigation */
-    nav {
-      background: rgba(255, 255, 255, 0.95);
-      color: var(--dark);
-      padding: 20px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    nav.scrolled {
-      padding: 15px 5%;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .logo {
-      font-size: 1.8em;
-      font-weight: 700;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: #007BFF;
-      display: flex;
-      align-items: center;
-      transition: transform 0.5s ease;
-    }
-
-    .logo:hover {
-      transform: scale(1.05);
-    }
-
-    .logo i {
-      margin-right: 10px;
-      font-size: 1.3em;
-      animation: pulse 2s infinite;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-
-    nav ul li a {
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: var(--primary);
-    }
-
-    nav ul li a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--gradient);
-      transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    nav ul li a:hover::after {
-      width: 100%;
-    }
-
-    .menu-toggle {
-      display: none;
-      cursor: pointer;
-      font-size: 1.5em;
-      transition: transform 0.3s ease;
-    }
-
-    .menu-toggle:hover {
-      transform: rotate(90deg);
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      padding: 0 5%;
-      background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
-      position: relative;
-      color: white;
-      text-align: center;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 3.5em;
-      margin-bottom: 20px;
-      line-height: 1.2;
-      /*animation: fadeInUp 1s ease, float 6s ease-in-out infinite;*/
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-      /*animation: fadeInUp 1s ease 0.2s forwards, float 6s ease-in-out infinite 0.2s;*/
-      
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: orange;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      animation: fadeInUp 1s ease 0.4s forwards, pulse 2s ease infinite 1.4s;
-      opacity: 0;
-      border: none;
-      cursor: pointer;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: 0.5s;
-    }
-
-    .cta-button:hover::before {
-      left: 100%;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4);
-    }
-
-    /* Floating elements */
-    .floating-elements {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    .floating-element {
-      position: absolute;
-      background: rgba(255,255,255,0.1);
-      border-radius: 50%;
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      animation: float 15s infinite linear;
-    }
-
-    /* Sections générales */
-    section {
-      padding: 100px 5%;
-      max-width: 1400px;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-    }
-
-    section:nth-child(even) {
-      background: white;
-    }
-
-    h2 {
-      text-align: center;
-      font-size: 2.8em;
-      margin-bottom: 60px;
-      position: relative;
-      color: var(--dark);
-    }
-
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background: var(--gradient);
-      border-radius: 2px;
-      animation: lineGrow 1s ease-out;
-    }
-
-    /* About section */
-    .about {
-      text-align: center;
-    }
-
-    .about p {
-      max-width: 800px;
-      margin: 0 auto 40px;
-      font-size: 1.1em;
-      color: var(--dark);
-    }
-
-    .stats {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 50px;
-    }
-
-    .stat-item {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      text-align: center;
-      min-width: 200px;
-      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      transform-style: preserve-3d;
-    }
-
-    .stat-item:hover {
-      transform: translateY(-10px) rotateX(10deg);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    }
-
-    .stat-number {
-      font-size: 2.5em;
-      font-weight: 700;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      margin-bottom: 10px;
-    }
-
-    .stat-label {
-      color: var(--gray);
-      font-weight: 500;
-    }
-
-    /* Services section */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      perspective: 1000px;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      z-index: 1;
-      transform-style: preserve-3d;
-    }
-
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--gradient);
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      z-index: -1;
-    }
-
-    .service-card:hover {
-      transform: translateY(-10px) rotateY(5deg) rotateX(5deg);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    }
-
-    .service-card:hover::before {
-      opacity: 0.1;
-    }
-
-    .service-card:hover .service-icon {
-      transform: scale(1.1) rotate(15deg);
-      color: var(--primary);
-      background: var(--gradient-accent);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .service-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      transition: transform 0.8s ease;
-    }
-
-    .service-card:hover img {
-      transform: scale(1.1) rotate(1deg);
-    }
-
-    .service-content {
-      padding: 25px;
-      position: relative;
-    }
-
-    .service-icon {
-      position: absolute;
-      top: -30px;
-      right: 25px;
-      width: 60px;
-      height: 60px;
-      background: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5em;
-      color: var(--gray);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .service-content h3 {
-      margin-bottom: 15px;
-      color: var(--dark);
-      font-size: 1.4em;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    .service-card:hover .service-content h3 {
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .service-content p {
-      font-size: 0.95em;
-      margin-bottom: 20px;
-      color: var(--gray);
-      transition: color 0.3s ease;
-    }
-
-    .service-card:hover .service-content p {
-      color: var(--dark);
-    }
-
-    .service-content button {
-      background: var(--gradient);
-      border: none;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 50px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-content button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: 0.5s;
-    }
-
-    .service-content button:hover::before {
-      left: 100%;
-    }
-
-    .service-content button i {
-      transition: transform 0.5s ease;
-    }
-
-    .service-content button:hover {
-      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-      transform: translateY(-3px);
-    }
-
-    .service-content button:hover i {
-      transform: translateX(8px) rotate(360deg);
-    }
-
-    /* Contact section */
-    .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-      align-items: stretch;
-      perspective: 1000px;
-    }
-
-    .contact-details, .contact-form {
-      background: white;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-      flex: 1 1 400px;
-      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      transform-style: preserve-3d;
-    }
-
-    .contact-details:hover, .contact-form:hover {
-      transform: translateY(-10px) rotateY(3deg) rotateX(3deg);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact-details h3,
-    .contact-form h3 {
-      margin-bottom: 25px;
-      color: var(--dark);
-      font-size: 1.5em;
-      position: relative;
-    }
-
-    .contact-details h3::after,
-    .contact-form h3::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 50px;
-      height: 3px;
-      background: var(--gradient);
-      animation: lineGrow 1s ease-out;
-    }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .info-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 15px;
-      transition: transform 0.3s ease;
-    }
-
-    .info-item:hover {
-      transform: translateX(10px);
-    }
-
-    .info-icon {
-      width: 45px;
-      height: 45px;
-      background: rgba(37, 99, 235, 0.1);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      font-size: 1.2em;
-      flex-shrink: 0;
-      transition: all 0.5s ease;
-    }
-
-    .info-item:hover .info-icon {
-      background: var(--gradient);
-      color: white;
-      transform: scale(1.1) rotate(15deg);
-    }
-
-    .info-content h4 {
-      font-size: 1.1em;
-      margin-bottom: 5px;
-      color: var(--dark);
-    }
-
-    .info-content p, 
-    .info-content a {
-      color: var(--gray);
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .info-content a:hover {
-      color: var(--primary);
-    }
-
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .social-links a {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: rgba(37, 99, 235, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--primary);
-      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    }
-
-    .social-links a:hover {
-      background: var(--gradient);
-      color: white;
-      transform: translateY(-5px) rotate(15deg);
-      box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
-    }
-
-    .contact-form form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .form-group label {
-      font-weight: 500;
-      margin-bottom: 8px;
-      color: var(--dark);
-    }
-
-    .form-group input,
-    .form-group textarea {
-      padding: 15px;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      background: #f8fafc;
-      font-family: 'Poppins', sans-serif;
-      transition: all 0.5s ease;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--primary);
-      outline: none;
-      background: white;
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-      transform: translateY(-2px);
-    }
-
-    button[type="submit"] {
-      background: var(--gradient);
-      color: white;
-      border: none;
-      padding: 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1em;
-      transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    button[type="submit"]::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      transition: 0.5s;
-    }
-
-    button[type="submit"]:hover::before {
-      left: 100%;
-    }
-
-    button[type="submit"]:hover {
-      box-shadow: 0 15px 30px rgba(37, 99, 235, 0.3);
-      transform: translateY(-5px);
-    }
-
-    button[type="submit"] i {
-      transition: transform 0.5s ease;
-    }
-
-    button[type="submit"]:hover i {
-      transform: translateX(8px) rotate(360deg);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--dark);
-      color: white;
-      padding: 60px 5% 30px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .footer-column h3 {
-      font-size: 1.3em;
-      margin-bottom: 20px;
-      position: relative;
-      display: inline-block;
-    }
-    
-
-    .footer-column h3::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: var(--gradient);
-      animation: lineGrow 1s ease-out;
-    }
-
-    .footer-column p {
-      color: var(--gray);
-      margin-bottom: 20px;
-    }
-
-    .footer-links {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 12px;
-    }
-
-    .footer-links a {
-      color: var(--gray);
-      text-decoration: none;
-      transition: all 0.5s ease;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-links a:hover {
-      color: white;
-      transform: translateX(10px);
-    }
-
-    .footer-links a i {
-      font-size: 0.8em;
-      transition: transform 0.3s ease;
-    }
-
-    .footer-links a:hover i {
-      transform: rotate(45deg);
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 40px;
-      margin-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--gray);
-      font-size: 0.9em;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Background shapes animation */
-    .bg-shape {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.03);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      animation: float 15s infinite linear;
-      z-index: 0;
-    }
-
-    /* Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.1);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes float {
-      0% {
-        transform: translateY(0) rotate(0deg);
-      }
-      50% {
-        transform: translateY(-20px) rotate(5deg);
-      }
-      100% {
-        transform: translateY(0) rotate(0deg);
-      }
-    }
-
-    @keyframes lineGrow {
-      from {
-        width: 0;
-      }
-      to {
-        width: 100%;
-      }
-    }
-
-    @keyframes rotate {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .hero h1 {
-        font-size: 2.8em;
-      }
-      
-      h2 {
-        font-size: 2.4em;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-        z-index: 1001;
-      }
-
-      nav ul {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100vh;
-        background: white;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 30px;
-        transition: right 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
-      }
-
-      nav ul.active {
-        right: 0;
-      }
-      .stat-number {
-          font-size: 2rem;
-         font-weight: bold;
-          transition: all 0.3s ease-in-out;
-        }
-
-
-      .hero {
-        height: auto;
-        padding: 120px 5% 80px;
-      }
-
-      .hero h1 {
-        font-size: 2.2em;
-      }
-
-      .hero p {
-        font-size: 1em;
-      }
-
-      section {
-        padding: 80px 5%;
-      }
-
-      .service-card {
-        max-width: 400px;
-        margin: 0 auto;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .stat-item {
-        min-width: 150px;
-        padding: 20px;
-      }
-
-      .contact-details, .contact-form {
-        padding: 30px;
-      }
-    }
-
-    /* Team Section */
-.team {
-  text-align: center;
-  background: #f9fafc;
-  position: relative;
-  overflow: hidden;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  perspective: 1000px;
-}
-
-.team-member {
-  background: white;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
-  /*transition: var(--transition);*/
-  transform-style: preserve-3d;
-  position: relative;
-  z-index: 1;
-  border: 1px solid rgba(0,0,0,0.05);
-}
-
-.team-member:hover {
-  /*transform: translateY(-10px) rotateY(5deg) rotateX(5deg);*/
-  box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-}
-
-
-
-
-.social-links1 {
-  position: absolute;
-  bottom: -60px;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  transition: var(--transition);
-  padding: 15px 0;
-  background: rgba(67, 97, 238, 0.8);
-  backdrop-filter: blur(5px);
-}
-
-.team-member:hover .social-links1 {
-  bottom: 0;
-}
-
-.social-links1 a {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: white;
-  color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
-}
-
-.social-links1 a:hover {
-  background: var(--dark);
-  color: white;
-  transform: translateY(-5px);
-}
-
-.member-info {
-  padding: 30px;
-  text-align: center;
-}
-
-.member-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  color: var(--dark);
-}
-
-.member-info .position {
-  display: block;
-  color: var(--primary);
-  font-weight: 500;
-  margin-bottom: 15px;
-  font-size: 1rem;
-}
-
-.member-info p {
-  color: var(--gray);
-  font-size: 0.95rem;
-  line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-  .team-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-    margin: 0 auto;
-  }
   
-  .member-photo {
-
-    height: 250px;
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TERANGA NUMÉRIQUE",
+    "url": "https://teranganumerique.com",
+    "logo": "https://teranganumerique.com/logo.jpg",
+    "description": "Solutions numériques innovantes au Sénégal",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "SN",
+      "addressLocality": "Dakar"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+221-XX-XXX-XXXX",
+      "contactType": "customer service"
+    },
+    "sameAs": [
+      "https://www.facebook.com/teranganumerique",
+      "https://www.linkedin.com/company/teranganumerique"
+    ]
   }
-}
-
-/* Bouton WhatsApp flottant */
-.whatsapp-chatbot {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 1000;
-}
-
-.whatsapp-float {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: #25D366;
-  color: white;
-  border-radius: 50%;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
-  transition: all 0.4s;
-  font-size: 1.8rem;
-  position: relative;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
-}
-
-.whatsapp-float span {
-  position: absolute;
-  white-space: nowrap;
-  right: 70px;
-  background: white;
-  color: #075E54;
-  padding: 10px 15px;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  opacity: 0;
-  transition: all 0.4s;
-}
-
-.whatsapp-float:hover span {
-  opacity: 1;
-  right: 80px;
-}
-
-.chat-options {
-  position: absolute;
-  bottom: 80px;
-  right: 0;
-  background: white;
-  border-radius: 15px;
-  padding: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s;
-  pointer-events: none;
-}
-
-.whatsapp-chatbot:hover .chat-options {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.chat-options a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 15px;
-  border-radius: 10px;
-  color: var(--dark);
-  text-decoration: none;
-  margin: 5px 0;
-  font-size: 0.9rem;
-  transition: all 0.3s;
-}
-
-.chat-options a:hover {
-  background: #f5f5f5;
-  transform: translateX(-5px);
-}
-
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 999;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.5);
-}
-.modal-content {
-  background-color: white;
-  padding: 25px;
-  margin: 10% auto;
-  width: 90%;
-  max-width: 600px;
-  border-radius: 10px;
-  position: relative;
-}
-.close-btn {
-  position: absolute;
-  top: 10px; right: 15px;
-  font-size: 22px;
-  cursor: pointer;
-}
-.contact-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 20px;
-}
-.contact-buttons .btn {
-  text-decoration: none;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  margin: 5px;
-}
-.whatsapp { background-color: #25D366; }
-.call { background-color: #007BFF; }
-.email { background-color: #FF5722; }
-
-.team-img {
-  width: 180px;
-  height: 180px;
-  line-height: 180px;
-  border-radius: 50%;
-  background-color: #f8f9fa;
-  display: inline-block;
-  font-size: 48px;
-  color: #007bff;
-  margin-top: 40px;     /* espace au-dessus */
-  margin-bottom: 15px;
-}
-
-
-
-  </style>
+  </script>
 </head>
 <body>
-
+  <!-- Navigation -->
   <nav id="navbar">
-    <div class="logo"><i class="fas fa-globe-africa"></i>TERANGA NUMERIQUE</div>
-
+    <a href="index.html" class="logo">
+      <img src="logo.jpg" alt="Logo">
+    </a>
+    
     <div class="menu-toggle">
       <i class="fas fa-bars"></i>
     </div>
+    
     <ul>
-      <li><a href="#home">Accueil</a></li>
-      <li><a href="#about">À propos</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#profil">Equipe</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="devis.html">Devis</a></li>
     </ul>
   </nav>
 
+  <!-- Hero Section -->
   <section id="home" class="hero">
-    <!-- Floating background elements -->
-    <div class="floating-elements">
-      <div class="floating-element" style="width: 100px; height: 100px; top: 20%; left: 10%; animation-delay: 0s;"></div>
-      <div class="floating-element" style="width: 150px; height: 150px; top: 60%; left: 80%; animation-delay: 2s;"></div>
-      <div class="floating-element" style="width: 80px; height: 80px; top: 30%; left: 70%; animation-delay: 4s;"></div>
-      <div class="floating-element" style="width: 120px; height: 120px; top: 70%; left: 20%; animation-delay: 6s;"></div>
-    </div>
-    
     <div class="hero-content">
-      <h1>Excellence Technologique au Sénégal</h1>
-      <p>TERANGA NUMÉRIQUE propose des solutions innovantes en développement logiciel, intelligence artificielle, cybersécurité, cloud computing et transformation digitale, avec un engagement constant envers l'innovation et la qualité.</p>
-      <a href="#contact" class="cta-button">Contactez-nous <i class="fas fa-arrow-right"></i></a>
+      <div class="hero-text">
+        <h1>Solutions Digitales Innovantes au Sénégal</h1>
+        <p>TERANGA NUMÉRIQUE vous accompagne dans votre transformation digitale avec des solutions sur mesure en développement web, intelligence artificielle, cybersécurité et cloud computing. Expertise locale, standards internationaux.</p>
+        <a href="contact.html" class="cta-button">Nous contacter pour un diagnostic gratuit <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Équipe TERANGA NUMÉRIQUE - Solutions digitales Sénégal">
+      </div>
     </div>
   </section>
 
-  <section id="about" class="about">
-    <!-- Background shapes -->
-    <div class="bg-shape" style="width: 300px; height: 300px; top: -100px; left: -100px; animation-delay: 0s;"></div>
-    <div class="bg-shape" style="width: 200px; height: 200px; bottom: -50px; right: -50px; animation-delay: 3s;"></div>
-    
-    <h2>À propos de nous</h2>
-    <p>
-      Fondée au Sénégal, TERANGA NUMÉRIQUE est une entreprise innovante spécialisée dans les solutions numériques. Notre approche avant-gardiste et notre engagement envers l'excellence nous permettent de proposer des services de haute qualité en développement logiciel, intelligence artificielle, cybersécurité, cloud computing et transformation digitale, répondant aux besoins tant locaux qu'internationaux.
-    </p>
-    
-    <div class="stats">
-        <div class="stat-item">
-          <div class="stat-number" data-target="5">0</div>
-          <div class="stat-label">Secteurs d'activité</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="50">0</div>
-          <div class="stat-label">Clients satisfaits</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="10">0</div>
-          <div class="stat-label">Partenariats</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number" data-target="100">0</div>
-          <div class="stat-label">Engagement qualité</div>
-        </div>
-      </div>
-      
-  </section>
-
-  <!-- Ajoutez cette section après la section "À propos" et avant "Services" -->
-<section id="profil" class="team">
-  <!-- Background shapes -->
-  <div class="bg-shape" style="width: 300px; height: 300px; top: -100px; right: -100px; animation-delay: 1s;"></div>
-  <div class="bg-shape" style="width: 200px; height: 200px; bottom: -50px; left: -50px; animation-delay: 3s;"></div>
-  
-  <h2>Notre Équipe</h2>
-  <p class="section-description">
-    Découvrez les talents derrière TERANGA NUMÉRIQUE.
-    Notre équipe de passionnés de technologie met son expertise au service de solutions digitales de pointe pour répondre aux défis d’aujourd’hui et de demain.
-  </p>
-  <br>
-  <br>
-  <div class="team-grid">
-    <!-- Membre 1 -->
-    <div class="team-member">
-      <div class="member-photo">
-        <img src="IMAGES/Picture.jpg" alt="Directeur Général" class="team-img">
-      </div>
-      <div class="member-info">
-        <h3>MAMADOU BANGALY</h3>
-        <span class="position">Entrepreneur & Manager TIC</span>
-        <p>Visionnaire et passionné par les technologies de l'information, MAMADOU BANGALY pilote avec succès notre entreprise , alliant expertise en développement web et leadership stratégique dans le secteur numérique.</p>
-      </div>
-    </div>
-    
-    <!-- Membre 2 -->
-    <div class="team-member">
-      <div class="member-photo">
-        <img src="IMAGES/KMS.jpg" alt="Responsable Commercial" class="team-img">
-        
-      </div>
-      <div class="member-info">
-        <h3>KHEMES YATT</h3>
-        <span class="position">Développeuse Web Full Stack & Manager TIC</span>
-        <p>Visionnaire et passionnée par les technologies numériques, KHEMES YATT dirige notre entreprise , en alliant maîtrise du développement web Full Stack et compétences en gestion stratégique dans le domaine des TIC.
-
-</p>
-      </div>
-    </div>
-    
-    <!-- Membre 3 -->
-    <div class="team-member">
-      <div class="member-photo">
-        <img src="IMAGES/samba.jpg" alt="Responsable Logistique" class="team-img">
-        
-      </div>
-      <div class="member-info">
-        <h3>SAMBA SY</h3>
-        <span class="position">Ingénieur en Intelligence Artificielle, Développeur Full Stack & Expert Cloud/DevOps</span>
-        <p>Visionnaire et engagé dans l’innovation technologique, Samba pilote notre entreprise avec une expertise pointue en intelligence artificielle, développement web Full Stack et ingénierie Cloud/DevOps.</p>
-      </div>
-    </div>
-    
-</section>
-
-  <section id="services" class="services">
-    <!-- Background shapes -->
-    <div class="bg-shape" style="width: 400px; height: 400px; top: -150px; right: -150px; animation-delay: 2s;"></div>
-    
-    <h2>Nos Services</h2>
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Nos Services Digitaux Experts</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1em; color: #64748b;">Découvrez notre gamme complète de services numériques conçus pour propulser votre entreprise vers le succès digital au Sénégal et en Afrique de l'Ouest.</p>
     <div class="services-grid">
       <div class="service-card">
-        <img src="IMAGES/seo.jpg" alt="Cosmétiques">
-        <div class="service-content">
-          <div class="service-icon">
-            <i class="fas fa-chart-line"></i>
-
-          </div>
-          <h3>Référencement web</h3>
-          <p>
-            Boostez la visibilité de votre site sur Google grâce à nos stratégies SEO efficaces et sur mesure.
-          </p>
-          <button class="open-modal-btn" data-target="serviceModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
-
-        </div>
-      </div>
-      
-
-      <!-- ✅ POPUP (à placer à la fin du <body> ou juste après la section "services") -->
-<div id="serviceModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>Référencement Web (SEO)</h2>
-    <p>
-      Le <strong>référencement naturel</strong> est un levier incontournable pour améliorer la visibilité de votre entreprise sur les moteurs de recherche.
-      Notre service comprend :
-    </p>
-    <ul>
-      <li>✅ Audit SEO technique et sémantique de votre site</li>
-      <li>🔍 Optimisation du contenu et des balises (meta, Hn, alt...)</li>
-      <li>🔗 Stratégie de netlinking pour renforcer l’autorité de votre domaine</li>
-      <li>📈 Suivi des performances (Google Analytics, Search Console)</li>
-    </ul>
-    <p>
-      Grâce à notre expertise, vous gagnez en trafic organique qualifié, en notoriété et en conversions. Contactez-nous pour une stratégie sur-mesure.
-    </p>
-    <div class="contact-buttons">
-      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
-      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
-    </div>
-  </div>
-</div>
-
-
-
-      <div class="service-card">
-        <img src="IMAGES/clouds.jpg" alt="Import Export">
-        <div class="service-content">
-          <div class="service-icon">
-            <i class="fas fa-cloud"></i>
-
-          </div>
-          <h3>Services Clouds</h3>
-<p>
-  Modernisez votre système d'information avec nos solutions cloud sécurisées, flexibles et économiques.
-</p>
-<button class="open-modal-btn" data-target="cloudModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
-        </div>
-      </div>
-    <!-- Popup Services Clouds -->
-<div id="cloudModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>Services Cloud</h2>
-    <p>
-      Nos services cloud vous offrent des infrastructures performantes et flexibles pour soutenir votre activité. Nous proposons :
-    </p>
-    <ul>
-      <li>☁️ Hébergement web haute disponibilité</li>
-      <li>🔐 Stockage sécurisé des données (S3, Azure Blob, etc.)</li>
-      <li>🛡️ Sauvegardes automatiques et restaurations rapides</li>
-      <li>🔄 Intégration d'applications cloud (SaaS, PaaS, IaaS)</li>
-      <li>💡 Accompagnement et migration vers AWS, Azure, ou Google Cloud</li>
-    </ul>
-    <p>
-      Adoptez le cloud pour améliorer votre agilité, réduire les coûts et garantir une haute disponibilité de vos services.
-    </p>
-    <div class="contact-buttons">
-      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
-      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="service-card">
-        <img src="IMAGES/site.png" alt="Électronique">
-        <div class="service-content">
-          <div class="service-icon">
-            <i class="fas fa-laptop-code"></i>
-
-          </div>
-          <h3>Création de sites web</h3>
-          <p>
-            Des sites web modernes, responsives et optimisés pour booster votre présence en ligne.
-          </p>
-          <button class="open-modal-btn" data-target="webModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
-        </div>
-      </div>
-
-      <!-- Popup Création de sites web -->
-<div id="webModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>Création de sites web</h2>
-    <p>
-      Nous concevons des sites web sur mesure pour valoriser votre activité et renforcer votre image en ligne.
-    </p>
-    <ul>
-      <li>🎯 Conception de sites vitrines, e-commerce, blogs ou portails</li>
-      <li>📱 Design responsive pour une expérience optimale sur mobile et tablette</li>
-      <li>⚙️ Fonctionnalités avancées : formulaires, chat, réservations, etc.</li>
-      <li>🚀 Optimisation SEO pour améliorer votre visibilité</li>
-      <li>🧰 Maintenance et évolutivité garanties</li>
-    </ul>
-    <p>
-      Nous vous accompagnons à chaque étape : de l’idée à la mise en ligne, pour que votre site devienne un véritable levier de croissance.
-    </p>
-    <div class="contact-buttons">
-      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
-      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="service-card">
-        <img src="IMAGES/formation.jpg" alt="Agriculture">
-        <div class="service-content">
-          <div class="service-icon">
-            <i class="fas fa-chalkboard-teacher"></i>
-
-          </div>
-          <h3>Formation et Coaching</h3>
-          <p>
-             Formations pratiques et coaching personnalisés pour réussir dans le numérique.
-          </p>
-          <button class="open-modal-btn" data-target="formationModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
-
-        </div>
-      </div>
-
-      <!-- Popup Formation et Coaching -->
-<div id="formationModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>Formation & Coaching Numérique</h2>
-    <p>
-      Nous proposons des sessions de formation et de coaching adaptées à tous les niveaux dans les domaines clés du numérique :
-    </p>
-    <ul>
-      <li>💻 Création de sites web (HTML, CSS, WordPress, etc.)</li>
-      <li>📈 Marketing digital (réseaux sociaux, SEO, emailing)</li>
-      <li>☁️ Initiation et certification Cloud (AWS, Azure)</li>
-      <li>🎨 Design graphique (Canva, Photoshop, UX/UI)</li>
-      <li>🧑‍🏫 Coaching individualisé pour projets professionnels</li>
-    </ul>
-    <p>
-      Notre approche repose sur la pratique, l’écoute et un accompagnement humain pour garantir une réelle montée en compétences.
-    </p>
-    <div class="contact-buttons">
-      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
-      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
-    </div>
-  </div>
-</div>
-
-
-      <div class="service-card">
-        <img src="IMAGES/logo.png" alt="Commerce Détail">
-        <div class="service-content">
-          <div class="service-icon">
-            <i class="fas fa-palette"></i>
-
-          </div>
-          <h3>Conception de Logo</h3>
-<p>
-  Des logos uniques et percutants pour affirmer l'identité de votre marque.
-</p>
-<button class="open-modal-btn" data-target="logoModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
-
-        </div>
-      </div>
-
-      <!-- Popup Conception de Logo -->
-<div id="logoModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>Conception de Logo Professionnel</h2>
-    <p>
-      Nous créons des logos sur mesure, conçus pour transmettre l’essence et les valeurs de votre marque. Notre démarche inclut :
-    </p>
-    <ul>
-      <li>🎯 Analyse de votre identité et de votre positionnement</li>
-      <li>🎨 Création de plusieurs propositions graphiques</li>
-      <li>📝 Intégration de vos retours pour affiner le design</li>
-      <li>📦 Livraison de fichiers HD pour tous vos supports</li>
-    </ul>
-    <p>
-      Un bon logo ne se contente pas d’être joli : il inspire confiance, attire l’attention et marque les esprits.
-    </p>
-    <div class="contact-buttons">
-      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
-      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
-    </div>
-  </div>
-</div>
-
-    
-
-    <div class="service-card">
-      <img src="IMAGES/marketing.jpg" alt="Commerce Détail">
-      <div class="service-content">
+        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Développement Web" class="service-image">
         <div class="service-icon">
-          <i class="fas fa-bullhorn"></i>
-
+          <i class="fas fa-code"></i>
         </div>
-        <h3>Marketing Digital</h3>
-<p>
-  Boostez votre visibilité en ligne avec des stratégies marketing ciblées et performantes.
-</p>
-<button class="open-modal-btn" data-target="marketingModal">En savoir plus <i class="fas fa-arrow-right"></i></button>
+        <div class="service-content">
+          <h3>Développement Web</h3>
+          <p>Sites web modernes, applications e-commerce et plateformes sur mesure optimisées pour le référencement naturel et l'expérience utilisateur.</p>
+          <a href="service-developpement-web.html" class="service-detail-btn">Détails <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
 
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Intelligence Artificielle" class="service-image">
+        <div class="service-icon">
+          <i class="fas fa-brain"></i>
+        </div>
+        <div class="service-content">
+          <h3>Intelligence Artificielle</h3>
+          <p>Solutions IA personnalisées, chatbots intelligents, analyse de données et automatisation des processus métier pour optimiser votre productivité.</p>
+          <a href="service-intelligence-artificielle.html" class="service-detail-btn">Détails <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cybersécurité" class="service-image">
+        <div class="service-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="service-content">
+          <h3>Cybersécurité</h3>
+          <p>Protection complète de vos données, audit de sécurité, mise en conformité RGPD et formation de vos équipes aux bonnes pratiques.</p>
+          <a href="service-cybersecurite.html" class="service-detail-btn">Détails <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
     </div>
-
-    <!-- Popup Marketing Digital -->
-<div id="marketingModal" class="modal">
-  <div class="modal-content">
-    <span class="close-btn">&times;</span>
-    <h2>Marketing Digital</h2>
-    <p>
-      Nos services de marketing digital vous permettent d’atteindre efficacement vos clients là où ils passent le plus de temps : en ligne. Nos solutions incluent :
-    </p>
-    <ul>
-      <li>📢 Campagnes ciblées sur les réseaux sociaux (Facebook, Instagram, LinkedIn...)</li>
-      <li>📈 Référencement payant (SEA) sur Google Ads</li>
-      <li>📬 Email marketing pour fidéliser vos clients</li>
-      <li>✍️ Création de contenu à forte valeur ajoutée (blog, vidéo, visuels)</li>
-    </ul>
-    <p>
-      Ensemble, nous mettons en place une stratégie sur-mesure pour augmenter votre notoriété, générer du trafic qualifié et maximiser vos conversions.
-    </p>
-    <div class="contact-buttons">
-      <a href="https://wa.me/221771234567" target="_blank" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-      <a href="tel:+221771234567" class="btn call"><i class="fas fa-phone"></i> Appeler</a>
-      <a href="mailto:teranganumerique@gmail.com" class="btn email"><i class="fas fa-envelope"></i> Email</a>
+    
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="services.html" class="cta-button">Voir tous les services <i class="fas fa-arrow-right"></i></a>
     </div>
-  </div>
-</div>
-
   </section>
 
-  <section id="contact" class="contact">
-    <!-- Background shapes -->
-    <div class="bg-shape" style="width: 250px; height: 250px; top: 50px; left: -100px; animation-delay: 1s;"></div>
-    <div class="bg-shape" style="width: 350px; height: 350px; bottom: -100px; right: -100px; animation-delay: 4s;"></div>
-    
-    <h2>Contactez-nous</h2>
-    <div class="contact-container">
-      <!-- Infos de contact -->
-      <div class="contact-details">
-        <h3>Nos coordonnées</h3>
-        <div class="contact-info">
-          <div class="info-item">
-            <div class="info-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="info-content">
-              <h4>Adresse</h4>
-              <p>Dakar, Sénégal</p>
-            </div>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="about-container">
+      <div class="about-content">
+        <h2>Votre Partenaire Digital de Confiance au Sénégal</h2>
+        <p>Entreprise sénégalaise leader dans les solutions numériques innovantes, nous combinons expertise technique locale et standards internationaux pour accompagner votre transformation digitale. Notre équipe passionnée met son savoir-faire au service de votre réussite.</p>
+        
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-number counter" data-target="150">0</div>
+            <div class="stat-label">Projets Réalisés</div>
           </div>
-          
-          <div class="info-item">
-            <div class="info-icon">
-              <i class="fas fa-phone-alt"></i>
-            </div>
-            <div class="info-content">
-              <h4>Téléphone</h4>
-              <a href="tel:+221773784814">+221 77 378 48 14</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number counter" data-target="120">0</div>
+            <div class="stat-label">Clients Satisfaits</div>
           </div>
-          
-          <div class="info-item">
-            <div class="info-icon">
-              <i class="fab fa-whatsapp"></i>
-            </div>
-            <div class="info-content">
-              <h4>WhatsApp</h4>
-              <a href="https://wa.me/221773784814" target="_blank">Envoyer un message</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number counter" data-target="5">0</div>
+            <div class="stat-label">Années d'Expérience</div>
           </div>
-          
-          <div class="info-item">
-            <div class="info-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
-            <div class="info-content">
-              <h4>Email</h4>
-              <a href="mailto:teranganumerique@gmail.com">teranganumerique@gmail.com</a>
-            </div>
+          <div class="stat-item">
+            <div class="stat-number counter" data-target="100">0</div>
+            <div class="stat-label">% Satisfaction Client</div>
           </div>
         </div>
         
-        <div class="social-links">
-          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="about.html" class="cta-button">Découvrir notre histoire <i class="fas fa-arrow-right"></i></a>
         </div>
       </div>
-  
-      <!-- Formulaire de contact -->
-      <div class="contact-form">
-        <h3>Envoyer un message</h3>
-        <form action="#" method="POST">
-          <div class="form-group">
-            <label for="name">Nom complet</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Adresse Email</label>
-            <input type="email" id="email" name="email" placeholder="Votre email" required>
-          </div>
-          <div class="form-group">
-            <label for="subject">Objet</label>
-            <input type="text" id="subject" name="subject" placeholder="Objet de votre message" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Écrivez votre message ici..." required></textarea>
-          </div>
-          <button type="submit">Envoyer le message <i class="fas fa-paper-plane"></i></button>
-        </form>
+      
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Équipe TERANGA NUMÉRIQUE - Professionnels sénégalais">
       </div>
     </div>
   </section>
 
-  <footer>
-    <!-- Background shapes -->
-    <div class="bg-shape" style="width: 500px; height: 500px; top: -200px; left: -200px; animation-delay: 0s;"></div>
-    <div class="bg-shape" style="width: 300px; height: 300px; bottom: -100px; right: -100px; animation-delay: 5s;"></div>
+  <!-- Blog Section -->
+  <section id="blog">
+    <h2>Actualités & Conseils Digitaux</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 40px; font-size: 1.1em; color: #1e293b; font-weight: 500;">Restez informé des dernières tendances technologiques et découvrez nos conseils d'experts pour réussir votre transformation digitale au Sénégal.</p>
+    <div class="blog-grid">
+      <article class="blog-card">
+        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Transformation digitale au Sénégal">
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> 15 Décembre 2024</span>
+            <span><i class="fas fa-tag"></i> Transformation Digitale</span>
+          </div>
+          <h3 class="blog-title">La Transformation Digitale des Entreprises Sénégalaises en 2024</h3>
+          <p class="blog-excerpt">Découvrez comment les entreprises sénégalaises adoptent les technologies numériques pour rester compétitives...</p>
+          <a href="blog-transformation-digitale.html" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Intelligence artificielle Sénégal">
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> 10 Décembre 2024</span>
+            <span><i class="fas fa-tag"></i> Intelligence Artificielle</span>
+          </div>
+          <h3 class="blog-title">L'IA au Service des Entreprises Sénégalaises</h3>
+          <p class="blog-excerpt">Comment l'intelligence artificielle peut révolutionner les secteurs clés du Sénégal : agriculture, santé, éducation...</p>
+          <a href="blog-ia-entreprises.html" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Cybersécurité Sénégal">
+        <div class="blog-content">
+          <div class="blog-meta">
+            <span><i class="fas fa-calendar"></i> 5 Décembre 2024</span>
+            <span><i class="fas fa-tag"></i> Cybersécurité</span>
+          </div>
+          <h3 class="blog-title">Cybersécurité au Sénégal : Protéger Votre Entreprise</h3>
+          <p class="blog-excerpt">Les cybermenaces évoluent rapidement. Découvrez les meilleures pratiques de sécurité informatique adaptées aux PME sénégalaises...</p>
+          <a href="blog-cybersecurite.html" class="read-more">Lire la suite <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </article>
+    </div>
     
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="blog.html" class="cta-button">Voir tous les blogs <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section style="background: linear-gradient(135deg, #2563eb, #10b981); color: white; border-radius: 20px; text-align: center; margin: 50px 0;">
+    <h2 style="color: white;">Prêt à Transformer Votre Entreprise ?</h2>
+    <p style="font-size: 1.2em; margin-bottom: 30px;">Obtenez un devis personnalisé gratuit pour votre projet digital</p>
+    <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+      <a href="devis.html" class="cta-button" style="background: white; color: #2563eb;">
+        <i class="fas fa-calculator"></i> Devis gratuit
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
     <div class="footer-content">
       <div class="footer-column">
-        <h3>Dk Teranga Numerique</h3>
-        <p>Entreprise technologique sénégalaise spécialisée dans des solutions numériques de qualité, alliant innovation et expertise dans des domaines variés tels que l’intelligence artificielle, le développement logiciel, le cloud et la cybersécurité.</p>
+        <h3>TERANGA NUMÉRIQUE</h3>
+        <p>Votre partenaire digital au Sénégal pour des solutions innovantes et sur mesure.</p>
         <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
       
       <div class="footer-column">
-        <h3>Nos Services</h3>
+        <h3>Services</h3>
         <ul class="footer-links">
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Référencement web</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Services Clouds</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Création de sites web</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Formation et Coatching</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Conception de Logo</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Marketing Digital</a></li>
+          <li><a href="service-developpement-web.html"><i class="fas fa-chevron-right"></i> Développement Web</a></li>
+          <li><a href="service-intelligence-artificielle.html"><i class="fas fa-chevron-right"></i> Intelligence Artificielle</a></li>
+          <li><a href="service-cybersecurite.html"><i class="fas fa-chevron-right"></i> Cybersécurité</a></li>
+          <li><a href="service-cloud-computing.html"><i class="fas fa-chevron-right"></i> Cloud Computing</a></li>
         </ul>
       </div>
       
       <div class="footer-column">
-        <h3>Liens utiles</h3>
+        <h3>Liens Utiles</h3>
         <ul class="footer-links">
-          <li><a href="#home"><i class="fas fa-chevron-right"></i> Accueil</a></li>
-          <li><a href="#about"><i class="fas fa-chevron-right"></i> À propos</a></li>
-          <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
-          <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-          <li><a href="#"><i class="fas fa-chevron-right"></i> Politique de confidentialité</a></li>
+          <li><a href="about.html"><i class="fas fa-chevron-right"></i> À propos</a></li>
+          <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+          <li><a href="devis.html"><i class="fas fa-chevron-right"></i> Demander un devis</a></li>
+          <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
         </ul>
       </div>
       
       <div class="footer-column">
         <h3>Contact</h3>
         <ul class="footer-links">
-          <li><a href="tel:+221773784814"><i class="fas fa-phone-alt"></i> +221 77 378 48 14</a></li>
-          <li><a href="mailto:teranganumerique@gmail.com"><i class="fas fa-envelope"></i>teranganumerique@gmail.com</a></li>
-          <li><a href="https://wa.me/221773784814" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
-          <li><a href="#"><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</a></li>
+          <li><i class="fas fa-map-marker-alt"></i> Dakar, Sénégal</li>
+          <li><i class="fas fa-phone"></i> +221 77 472 73 62</li>
+          <li><i class="fas fa-envelope"></i> contact@teranganumerique.com</li>
         </ul>
       </div>
     </div>
     
     <div class="copyright">
-      <p>&copy; 2025 Dk Teranga Numerique. Tous droits réservés.</p>
+      <p>&copy; 2024 TERANGA NUMÉRIQUE. Tous droits réservés. | Solutions digitales au Sénégal</p>
     </div>
   </footer>
 
-  <script>
-
-    // Script pour le chatbot WhatsApp
-    const whatsappBtn = document.createElement('div');
-    whatsappBtn.className = 'whatsapp-chatbot';
-    whatsappBtn.innerHTML = `
-      <a href="https://wa.me/221773784814" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-        <span>Besoin d'aide ?</span>
-      </a>
-      <div class="chat-options">
-        <a href="https://wa.me/221773784814?text=Je%20veux%20commander%20un%20service">
-          <i class="fas fa-shopping-cart"></i> Commander
-        </a>
-        <a href="https://wa.me/221773784814?text=Je%20veux%20plus%20d'informations">
-          <i class="fas fa-info-circle"></i> Informations
-        </a>
-        <a href="tel:+221773784814">
-          <i class="fas fa-phone-alt"></i> Appeler
-        </a>
-      </div>
-    `;
-    document.body.appendChild(whatsappBtn);
-
-    // Script pour le formulaire de contact
-    document.querySelector('form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const service = document.getElementById('service').value;
-      const message = document.getElementById('message').value;
-      const whatsappUrl = `https://wa.me/221773784814?text=${encodeURIComponent(
-        `Nouvelle demande de service:\nService: ${service}\nMessage: ${message}`
-      )}`;
-      window.open(whatsappUrl, '_blank');
-    });
-    // Menu mobile
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navUl = document.querySelector('nav ul');
-    
-    menuToggle.addEventListener('click', () => {
-      navUl.classList.toggle('active');
-      menuToggle.innerHTML = navUl.classList.contains('active') ? 
-        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-    });
-    
-    // Fermer le menu au clic sur un lien
-    document.querySelectorAll('nav ul li a').forEach(link => {
-      link.addEventListener('click', () => {
-        navUl.classList.remove('active');
-        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-      });
-    });
-    
-    // Effet de scroll sur la navbar
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 50) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-    
-    // Animation au scroll
-    const animateOnScroll = () => {
-      const elements = document.querySelectorAll('.service-card, .stat-item, .contact-details, .contact-form, .footer-column');
-      
-      elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
-        
-        if (elementPosition < screenPosition) {
-          element.style.opacity = '1';
-          element.style.transform = 'translateY(0)';
-        }
-      });
-    };
-    
-    // Initialiser les éléments cachés
-    document.querySelectorAll('.service-card, .stat-item, .contact-details, .contact-form, .footer-column').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(30px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    });
-    
-    // Créer des éléments flottants dynamiques
-    const createFloatingElements = () => {
-      const sections = document.querySelectorAll('section');
-      
-      sections.forEach(section => {
-        // Ne pas ajouter d'éléments flottants si déjà présents
-        if (section.querySelector('.bg-shape')) return;
-        
-        for (let i = 0; i < 3; i++) {
-          const size = Math.random() * 200 + 100;
-          const posX = Math.random() * 100;
-          const posY = Math.random() * 100;
-          const delay = Math.random() * 5;
-          
-          const shape = document.createElement('div');
-          shape.className = 'bg-shape';
-          shape.style.width = `${size}px`;
-          shape.style.height = `${size}px`;
-          shape.style.left = `${posX > 50 ? 'auto' : '-50px'}`;
-          shape.style.right = `${posX > 50 ? '-50px' : 'auto'}`;
-          shape.style.top = `${posY > 50 ? 'auto' : '-50px'}`;
-          shape.style.bottom = `${posY > 50 ? '-50px' : 'auto'}`;
-          shape.style.animationDelay = `${delay}s`;
-          
-          section.appendChild(shape);
-        }
-      });
-    };
-    
-    window.addEventListener('scroll', animateOnScroll);
-    window.addEventListener('load', () => {
-      animateOnScroll();
-      createFloatingElements();
-    });
-    
-    // Effet de vague sur le bouton CTA
-    const ctaButton = document.querySelector('.cta-button');
-    if (ctaButton) {
-      ctaButton.addEventListener('mouseenter', () => {
-        const ripple = document.createElement('span');
-        ripple.className = 'ripple';
-        ctaButton.appendChild(ripple);
-        
-        setTimeout(() => {
-          ripple.remove();
-        }, 1000);
-      });
-    }
-    
-    // Animation de fond pour la section hero
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-      for (let i = 0; i < 5; i++) {
-        const element = document.createElement('div');
-        element.className = 'floating-element';
-        element.style.width = `${Math.random() * 100 + 50}px`;
-        element.style.height = element.style.width;
-        element.style.top = `${Math.random() * 100}%`;
-        element.style.left = `${Math.random() * 100}%`;
-        element.style.animationDelay = `${Math.random() * 5}s`;
-        
-        heroSection.querySelector('.floating-elements').appendChild(element);
-      }
-    }
-
-
-
-    const counters = document.querySelectorAll('.stat-number');
-
-  counters.forEach(counter => {
-    const updateCount = () => {
-      const target = +counter.getAttribute('data-target');
-      const count = +counter.innerText;
-
-      const speed = 100; // Plus le chiffre est petit, plus l'animation est rapide
-
-      const increment = Math.ceil(target / speed);
-
-      if (count < target) {
-        counter.innerText = count + increment;
-        setTimeout(updateCount, 50);
-      } else {
-        counter.innerText = target + (target !== 100 ? '+' : '%');
-      }
-    };
-
-    updateCount();
-  });
-
-  // Ouvrir la bonne modale
-  document.querySelectorAll('.open-modal-btn').forEach(button => {
-    button.addEventListener('click', function () {
-      const modalId = this.getAttribute('data-target');
-      document.getElementById(modalId).style.display = 'block';
-    });
-  });
-
-  // Fermer toutes les modales
-  document.querySelectorAll('.modal .close-btn').forEach(closeBtn => {
-    closeBtn.addEventListener('click', function () {
-      this.closest('.modal').style.display = 'none';
-    });
-  });
-
-  // Fermer si clic à l’extérieur de la modale
-  window.addEventListener('click', function (e) {
-    document.querySelectorAll('.modal').forEach(modal => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    });
-  });
-  </script>
-
+  <!-- JavaScript -->
+  <script src="assets/js/script.js"></script>
 </body>
 </html>

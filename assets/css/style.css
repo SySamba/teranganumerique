@@ -29,7 +29,7 @@ body {
 
 /* Navigation */
 nav {
-  background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(59, 130, 246, 0.95));
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.95), rgba(247, 147, 30, 0.95));
   backdrop-filter: blur(15px);
   padding: 25px 5%;
   display: flex;
@@ -40,7 +40,7 @@ nav {
   width: 100%;
   z-index: 1000;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 40px rgba(30, 64, 175, 0.3);
+  box-shadow: 0 8px 40px rgba(255, 107, 53, 0.3);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -628,6 +628,20 @@ footer {
   .blog-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  
+  /* Categories responsive - 2x2 on mobile */
+  .services-grid[style*="repeat(4, 1fr)"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Categories responsive - 1 column on very small screens */
+  .services-grid[style*="repeat(4, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
   }
 }
 

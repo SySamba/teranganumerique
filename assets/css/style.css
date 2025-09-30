@@ -370,6 +370,9 @@ h2::after {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .service-card::before {
@@ -430,7 +433,7 @@ h2::after {
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  margin-top: 10px;
+  margin-top: auto;
 }
 
 .service-detail-btn:hover {
@@ -441,6 +444,11 @@ h2::after {
 }
 
 .service-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 0 30px 30px;
 }
 
@@ -910,6 +918,9 @@ footer {
   overflow: hidden;
   position: relative;
   backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .service-card::before {
@@ -1043,10 +1054,14 @@ footer {
 
 .blog-card {
   background: white;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   border: 1px solid #e2e8f0;
 }
 
@@ -1068,6 +1083,9 @@ footer {
 
 .blog-content {
   padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .blog-meta {
@@ -1106,6 +1124,7 @@ footer {
   align-items: center;
   gap: 8px;
   transition: all 0.3s ease;
+  margin-top: auto;
 }
 
 .read-more:hover {

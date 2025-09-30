@@ -8,6 +8,142 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// ============================
+// Chatbox TERANGA NUMÉRIQUE
+// ============================
+document.addEventListener('DOMContentLoaded', function () {
+  if (document.getElementById('tn-chatbox')) return; // avoid duplicate
+
+  const chatWrapper = document.createElement('div');
+  chatWrapper.id = 'tn-chatbox';
+  chatWrapper.innerHTML = `
+    <div class="tn-chat-toggle" aria-label="Ouvrir le chat" title="Chat TERANGA NUMÉRIQUE">
+      <i class="fas fa-comments"></i>
+      <span class="tn-badge" aria-hidden="true">1</span>
+    </div>
+    <div class="tn-chat-panel" role="dialog" aria-label="Chat TERANGA NUMÉRIQUE" aria-modal="false">
+      <div class="tn-chat-header">
+        <div class="tn-chat-title">
+          <span class="tn-dot"></span>
+          Chat TERANGA NUMÉRIQUE
+        </div>
+        <button class="tn-chat-close" aria-label="Fermer"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="tn-chat-body">
+        <div class="tn-chat-messages" aria-live="polite"></div>
+        <div class="tn-quick-replies">
+          <button data-intent="services"><i class="fas fa-layer-group"></i> Services</button>
+          <button data-intent="devis"><i class="fas fa-calculator"></i> Devis</button>
+          <button data-intent="contact"><i class="fas fa-envelope"></i> Contact</button>
+          <button data-intent="apropos"><i class="fas fa-info-circle"></i> À propos</button>
+          <button data-intent="localisation"><i class="fas fa-map-marker-alt"></i> Localisation</button>
+          <button data-intent="horaires"><i class="fas fa-clock"></i> Horaires</button>
+        </div>
+      </div>
+      <form class="tn-chat-input" aria-label="Envoyer un message">
+        <input type="text" name="message" placeholder="Écrivez votre message..." autocomplete="off" />
+        <button type="submit" aria-label="Envoyer"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  `;
+
+  document.body.appendChild(chatWrapper);
+  // Create and attach overlay for clearer focus when chat is open
+  const overlay = document.createElement('div');
+  overlay.className = 'tn-chat-overlay';
+  document.body.appendChild(overlay);
+
+  const toggle = chatWrapper.querySelector('.tn-chat-toggle');
+  const panel = chatWrapper.querySelector('.tn-chat-panel');
+  const closeBtn = chatWrapper.querySelector('.tn-chat-close');
+  const messages = chatWrapper.querySelector('.tn-chat-messages');
+  const form = chatWrapper.querySelector('.tn-chat-input');
+  const input = form.querySelector('input[name="message"]');
+
+  const intents = {
+    services: `Voici nos services principaux:\n• Développement Web (vitrines, e-commerce, applications)\n• Intelligence Artificielle (chatbots, automatisation)\n• Cybersécurité (audit, conformité, formation)\n• Cloud Computing (migration, hébergement)\n\nEn savoir plus: https://teranganumerique.com/services.html`,
+    devis: `Nous proposons un devis gratuit et rapide. Cliquez ici: https://teranganumerique.com/devis.html`,
+    contact: `Vous pouvez nous joindre au +221 77 472 73 62 ou par email: contact@teranganumerique.com\nFormulaire: https://teranganumerique.com/contact.html`,
+    apropos: `Nous sommes TERANGA NUMÉRIQUE, entreprise sénégalaise créée en 2025 à Dakar. En savoir plus: https://teranganumerique.com/about.html`,
+    localisation: `Nous sommes basés à Dakar, Sénégal.`,
+    horaires: `Nous répondons généralement du lundi au vendredi, 9h–18h. Délais de réponse sous 24h.`
+  };
+
+  function addMessage(text, sender = 'bot') {
+    const bubble = document.createElement('div');
+    bubble.className = `tn-msg ${sender}`;
+    bubble.innerHTML = text.replace(/\n/g, '<br>');
+    messages.appendChild(bubble);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function openPanel() {
+    panel.classList.add('open');
+    toggle.classList.add('hidden');
+    overlay.classList.add('show');
+    panel.setAttribute('aria-modal', 'true');
+    if (!panel.dataset.welcomed) {
+      addMessage(`<strong>Bienvenue chez TERANGA NUMÉRIQUE</strong> 👋<br>Comment puis-je vous aider ? Sélectionnez une option ou posez votre question.`, 'bot');
+      panel.dataset.welcomed = '1';
+    }
+    input.focus();
+  }
+
+  function closePanel() {
+    panel.classList.remove('open');
+    toggle.classList.remove('hidden');
+    overlay.classList.remove('show');
+    panel.setAttribute('aria-modal', 'false');
+  }
+
+  function handleIntent(intentKey) {
+    const answer = intents[intentKey] || `Je n'ai pas bien saisi. Essayez: services, devis, contact, à propos, localisation, horaires.`;
+    addMessage(answer, 'bot');
+  }
+
+  toggle.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  overlay.addEventListener('click', closePanel);
+
+  chatWrapper.querySelectorAll('.tn-quick-replies button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const key = btn.dataset.intent;
+      addMessage(btn.textContent.trim(), 'user');
+      handleIntent(key);
+    });
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const text = input.value.trim();
+    if (!text) return;
+    addMessage(text, 'user');
+    input.value = '';
+    const lower = text.toLowerCase();
+    if (lower.includes('service')) return handleIntent('services');
+    if (lower.includes('devis') || lower.includes('prix') || lower.includes('tarif')) return handleIntent('devis');
+    if (lower.includes('contact') || lower.includes('téléphone') || lower.includes('telephone') || lower.includes('email')) return handleIntent('contact');
+    if (lower.includes('propos') || lower.includes('entreprise')) return handleIntent('apropos');
+    if (lower.includes('local') || lower.includes('dakar') || lower.includes('adresse')) return handleIntent('localisation');
+    if (lower.includes('horaire') || lower.includes('ouvert')) return handleIntent('horaires');
+    // default
+    handleIntent('services');
+  });
+
+  // Auto-open once per session after delay for first-time visitors
+  try {
+    const key = 'tn_chat_seen';
+    if (!sessionStorage.getItem(key)) {
+      setTimeout(() => {
+        if (!panel.classList.contains('open')) {
+          openPanel();
+        }
+        sessionStorage.setItem(key, '1');
+      }, 3000);
+    }
+  } catch (e) { /* ignore private mode errors */ }
+});
+
 // Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
@@ -158,7 +294,7 @@ function animateCounters() {
 }
 
 // Intersection Observer for counter animation
-if (document.querySelector('.stat-number')) {
+if (document.querySelector('.counter')) {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -168,7 +304,7 @@ if (document.querySelector('.stat-number')) {
         });
     });
     
-    document.querySelectorAll('.stat-number').forEach(counter => {
+    document.querySelectorAll('.counter').forEach(counter => {
         observer.observe(counter);
     });
 }
